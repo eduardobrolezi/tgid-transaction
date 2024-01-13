@@ -6,6 +6,6 @@ import br.com.tgid.transaction.model.enums.TransactionTypeEnum;
 
 import java.math.BigDecimal;
 
-public record TransactionResponse(Customer customer, Enterprise enterprise, BigDecimal value, TransactionTypeEnum typeEnum) {
+public record TransactionResponse(BigDecimal value, TransactionTypeEnum typeEnum) {
 
 }

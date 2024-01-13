@@ -18,7 +18,6 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "tran")
 public class Transaction {
 
    @Id
@@ -74,16 +73,16 @@ public class Transaction {
    public void setTypeEnum(TransactionTypeEnum typeEnum) {
       this.typeEnum = typeEnum;
    }
-   public static Transaction toModel(TransactionRequest transactionRequest) {
+   public static Transaction toModel(TransactionRequest transactionRequest, Customer customer, Enterprise enterprise) {
       Transaction transaction = new Transaction();
-      transaction.setCustomer(transactionRequest.customer());
-      transaction.setEnterprise(transactionRequest.enterprise());
+      transaction.setCustomer(customer);
+      transaction.setEnterprise(enterprise);
       transaction.setValue(transactionRequest.value());
       transaction.setTypeEnum(transactionRequest.typeEnum());
       return transaction;
 
    }
    public TransactionResponse toDto(){
-        return new TransactionResponse(this.customer, this.enterprise, this.value, this.typeEnum);
+        return new TransactionResponse(this.value, this.typeEnum);
    }
 }
