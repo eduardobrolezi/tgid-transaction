@@ -73,6 +73,7 @@ public class Transaction {
    public void setTypeEnum(TransactionTypeEnum typeEnum) {
       this.typeEnum = typeEnum;
    }
+
    public static Transaction toModel(TransactionRequest transactionRequest, Customer customer, Enterprise enterprise) {
       Transaction transaction = new Transaction();
       transaction.setCustomer(customer);

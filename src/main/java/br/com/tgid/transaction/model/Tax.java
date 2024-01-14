@@ -30,5 +30,42 @@ public class Tax {
     @Column(name = "type")
     private TransactionTypeEnum typeEnum;
 
+    public Tax(BigDecimal value) {
+    }
 
+    public Tax() {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public BigDecimal getValue() {
+        return value;
+    }
+
+    public void setValue(BigDecimal value) {
+        this.value = value;
+    }
+
+    public Enterprise getEnterprise() {
+        return enterprise;
+    }
+
+    public void setEnterprise(Enterprise enterprise) {
+        this.enterprise = enterprise;
+    }
+
+    public TransactionTypeEnum getTypeEnum() {
+        return typeEnum;
+    }
+
+    public void setTypeEnum(TransactionTypeEnum typeEnum) {
+        this.typeEnum = typeEnum;
+    }
 }
